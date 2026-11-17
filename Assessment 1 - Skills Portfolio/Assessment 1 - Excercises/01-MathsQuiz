@@ -6,9 +6,9 @@ import random
 root = Tk()
 root.title("Maths Quiz")
 root.geometry("480x550")
-root.resizable(False, False)
-root.configure(bg="#d7dae2")
-root.iconbitmap('abacus.ico')
+root.resizable(False, False) #size is locked
+root.configure(bg="#d7dae2") #main bg color
+root.iconbitmap('abacus.ico') #icon for the math quiz
 
 #important variables for the quiz
 difficulty = ""
