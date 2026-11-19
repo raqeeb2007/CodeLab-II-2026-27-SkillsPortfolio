@@ -248,11 +248,7 @@ def displayResults():
         grade = "F"
 
     grade_label = Label(
-        results_frame,
-        text="Grade: " + grade,
-        font=("Poppins", 15, "bold"),
-        bg="#eef0f4",
-        fg="#526b78"
+        results_frame,text="Grade: " + grade, font=("Poppins", 15, "bold"),bg="#eef0f4",fg="#526b78"
     )
     grade_label.pack(pady=5)
 
