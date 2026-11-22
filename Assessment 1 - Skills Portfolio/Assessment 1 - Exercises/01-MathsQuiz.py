@@ -7,7 +7,7 @@ root = Tk()
 root.title("Maths Quiz")
 root.geometry("480x550")
 root.resizable(True, True) #size is resizable now
-root.configure(bg="#B8E8E8") #main bg color
+root.configure(bg="#EAF2F8") #main bg color
 root.iconbitmap('abacus.ico') #icon for the math quiz
 
 #important variables for the quiz
@@ -26,23 +26,23 @@ def clearWindow():
 def displayMenu():
     clearWindow()
 
-    main_frame = Frame(root, bg="#B8E8E8")
+    main_frame = Frame(root, bg="#DCEAF4")
     main_frame.pack(fill="both", expand=True, padx=35, pady=25)
 
     title = Label(#main title for the quiz
         main_frame,
-        text="Math Quiz For Codelab II", font=("Poppins", 20, "bold"),bg="#B8E8E8", fg="#203B43"
+        text="Math Quiz For Codelab II", font=("Poppins", 20, "bold"),bg="#DCEAF4", fg="#18334D"
     )
     title.pack(pady=(15, 5)) #i chose poppins as my font of choice by dowbloading it through google fonts
 
     subtitle = Label( #subtitle below the title
-        main_frame, text="Can you pass this math quiz?",font=("Poppins", 9), bg="#B8E8E8", fg="#426C75"
+        main_frame, text="Can you pass this math quiz?",font=("Poppins", 9), bg="#DCEAF4", fg="#52718A"
     )
     subtitle.pack(pady=(0, 25))
 
     instruction = Label(
         main_frame,
-        text="Select your difficulty level", font=("Poppins", 12, "normal"),bg="#B8E8E8",fg="#29434A"
+        text="Select your difficulty level", font=("Poppins", 12, "normal"),bg="#DCEAF4",fg="#24476A"
     ) #frame for difficulty choices
     instruction.pack(pady=10)
 
@@ -52,7 +52,7 @@ def displayMenu():
         startQuiz()
 
     button_options = {
-        "font": ("Poppins", 10, "normal"), "width": 20,"bg": "#203B43","fg": "#ffffff","activebackground": "#426C75","activeforeground": "#ffffff","relief": "flat","bd": 0,"pady": 7
+        "font": ("Poppins", 10, "normal"), "width": 20,"bg": "#24476A","fg": "#ffffff","activebackground": "#527A9E","activeforeground": "#ffffff","relief": "flat","bd": 0,"pady": 7
     }
 
     easyButton = Button( main_frame,text="Easy",command=lambda: selectDifficulty("Easy"),**button_options
@@ -114,38 +114,38 @@ def displayProblem():
     else:
         correct_answer = num1 - num2
 
-    main_frame = Frame(root, bg="#B8E8E8")
+    main_frame = Frame(root, bg="#DCEAF4")
     main_frame.pack(fill="both", expand=True, padx=30, pady=20)
 
     progress_label = Label(
-        main_frame,text="QUESTION " + str(question_number + 1) + " OF 10",font=("Poppins", 10, "bold"),bg="#B8E8E8",fg="#426C75" 
+        main_frame,text="QUESTION " + str(question_number + 1) + " OF 10",font=("Poppins", 10, "bold"),bg="#DCEAF4",fg="#52718A" 
         #simple progress check
     )
     progress_label.pack(pady=5)
 
-    score_label = Label(main_frame,text="Score: " + str(score),font=("Poppins", 10),bg="#B8E8E8",fg="#29434A" 
+    score_label = Label(main_frame,text="Score: " + str(score),font=("Poppins", 10),bg="#DCEAF4",fg="#24476A" 
         #keeps track of the score 
     )
     score_label.pack(pady=5)
 
-    question_frame = Frame( main_frame,bg="#E5F5F3",padx=20,pady=20 
+    question_frame = Frame( main_frame,bg="#EAF2F8",padx=20,pady=20 
     )#simple frame for the question
     question_frame.pack(fill="x", pady=15)
 
-    question_label = Label(question_frame,text=str(num1) + " " + operation + " " + str(num2) + " = ?",font=("Poppins", 25, "bold"),bg="#E5F5F3",fg="#203B43"
+    question_label = Label(question_frame,text=str(num1) + " " + operation + " " + str(num2) + " = ?",font=("Poppins", 25, "bold"),bg="#EAF2F8",fg="#18334D"
     )
     question_label.pack(pady=5)
 
-    answer_entry = Entry( main_frame,font=("Poppins", 13),width=15,justify="center",bg="#ffffff",fg="#29434A",relief="flat",bd=0
+    answer_entry = Entry( main_frame,font=("Poppins", 13),width=15,justify="center",bg="#ffffff",fg="#24476A",relief="flat",bd=0
     )#The space for the user to give an answer
     answer_entry.pack(pady=10, ipady=7)
     answer_entry.focus()
 
-    feedback_label = Label(  main_frame,text="Enter your answer below",font=("Poppins", 9),bg="#B8E8E8",fg="#426C75"
+    feedback_label = Label(  main_frame,text="Enter your answer below",font=("Poppins", 9),bg="#DCEAF4",fg="#52718A"
     )
     feedback_label.pack(pady=5)
 
-    submit_button = Button( main_frame,text="SUBMIT ANSWER",font=("Poppins", 10, "bold"),width=20,bg="#203B43",fg="#ffffff",activebackground="#426C75",activeforeground="#ffffff",relief="flat",bd=0,pady=8,
+    submit_button = Button( main_frame,text="SUBMIT ANSWER",font=("Poppins", 10, "bold"),width=20,bg="#24476A",fg="#ffffff",activebackground="#527A9E",activeforeground="#ffffff",relief="flat",bd=0,pady=8,
         command=lambda: isCorrect(answer_entry.get())
     )
     submit_button.pack(pady=10)
@@ -167,12 +167,12 @@ def isCorrect(answer):
         if attempts == 0:
             score += 10
             feedback_label.config(
-                text="Right on! +10 points.", fg="#426C75"#user gets 10 points for getting it right on the first try
+                text="Right on! +10 points.", fg="#1CDA42"#user gets 10 points for getting it right on the first try
             )
         else:
             score += 5
             feedback_label.config(
-                text="Not bad! +5 points.", fg="#426C75" #while they get 5 on the second try
+                text="Not bad! +5 points.", fg="#45E89C" #while they get 5 on the second try
             )
 
         submit_button.config(state="disabled")
@@ -211,23 +211,23 @@ def isCorrect(answer):
 def displayResults():
     clearWindow()
 
-    main_frame = Frame(root, bg="#B8E8E8")
+    main_frame = Frame(root, bg="#DCEAF4")
     main_frame.pack(fill="both", expand=True, padx=30, pady=30)
 
-    title = Label( main_frame,text="QUIZ FINISHED!", font=("Poppins", 20, "bold"),bg="#B8E8E8",fg="#203B43"
+    title = Label( main_frame,text="QUIZ FINISHED!", font=("Poppins", 20, "bold"),bg="#DCEAF4",fg="#18334D"
     )
     title.pack(pady=(20, 15))
 
-    results_frame = Frame(main_frame,bg="#E5F5F3",padx=25,pady=20
+    results_frame = Frame(main_frame,bg="#EAF2F8",padx=25,pady=20
     )
     results_frame.pack(fill="x", pady=10)
 
-    result_label = Label(results_frame,text="Your final results!",font=("Poppins", 11),bg="#E5F5F3",fg="#426C75"
+    result_label = Label(results_frame,text="Your final results!",font=("Poppins", 11),bg="#EAF2F8",fg="#52718A"
     )
     result_label.pack(pady=5)
 
     result_label = Label(
-        results_frame,text=str(score) + " / 100",font=("Poppins", 26, "bold"),bg="#E5F5F3",fg="#203B43"
+        results_frame,text=str(score) + " / 100",font=("Poppins", 26, "bold"),bg="#EAF2F8",fg="#18334D"
     )
     result_label.pack(pady=5)
 
@@ -248,12 +248,12 @@ def displayResults():
         grade = "F"
 
     grade_label = Label(
-        results_frame,text="Grade: " + grade, font=("Poppins", 15, "bold"),bg="#E5F5F3",fg="#426C75"
+        results_frame,text="Grade: " + grade, font=("Poppins", 15, "bold"),bg="#EAF2F8",fg="#52718A"
     )
     grade_label.pack(pady=5)
 
     button_options = {
-        "font": ("Poppins", 10, "bold"),"width": 20,"bg": "#203B43","fg": "#ffffff","activebackground": "#426C75","activeforeground": "#ffffff", "relief": "flat", "bd": 0,"pady": 8
+        "font": ("Poppins", 10, "bold"),"width": 20,"bg": "#24476A","fg": "#ffffff","activebackground": "#527A9E","activeforeground": "#ffffff", "relief": "flat", "bd": 0,"pady": 8
     }
 #buttons for replays and retrys
     retry_button = Button(main_frame,text="RETRY!",command=displayMenu,
