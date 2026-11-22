@@ -202,10 +202,10 @@ def sort_students():
         sort_window.destroy()
         view_all()
 
-    Button(sort_window,text="Ascending",command=ascending,font=("Poppins", 10),bg="#702D3C",fg="#FFFFFF",activebackground="#8F4657",activeforeground="#FFFFFF",relief="flat",cursor="hand2",width=18,pady=7
+    Button(sort_window,text="Ascending",command=ascending,font=("Poppins", 10),bg="#702D3C",fg="#FFFFFF",activebackground="#8F4657",activeforeground="#FFFFFF",relief="flat",width=18,pady=7
     ).pack(pady=8)
 
-    Button(sort_window,text="Descending", command=descending,font=("Poppins", 10),bg="#702D3C",fg="#FFFFFF",activebackground="#8F4657", activeforeground="#FFFFFF",relief="flat",cursor="hand2",width=18,pady=7
+    Button(sort_window,text="Descending", command=descending,font=("Poppins", 10),bg="#702D3C",fg="#FFFFFF",activebackground="#8F4657", activeforeground="#FFFFFF",relief="flat",width=18,pady=7
     ).pack(pady=8)
 
 
@@ -230,7 +230,7 @@ Label(menu_frame,text="MENU",font=("Poppins", 13, "bold"),bg="#F5EFE6",fg="#4423
 
 
 #button styling
-button_options = {"font": ("Poppins", 10, "normal"),"width": 20,"bg": "#702D3C","fg": "#FFFFFF","activebackground": "#8F4657","activeforeground": "#FFFFFF","relief": "flat","cursor": "hand2","bd": 0,"pady": 7
+button_options = {"font": ("Poppins", 10, "normal"),"width": 20,"bg": "#702D3C","fg": "#FFFFFF","activebackground": "#8F4657","activeforeground": "#FFFFFF","relief": "flat","bd": 0,"pady": 7
 }
 
 
