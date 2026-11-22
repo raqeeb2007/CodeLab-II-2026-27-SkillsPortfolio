@@ -8,6 +8,8 @@ root.title("Student Manager")
 root.geometry("700x600")
 root.resizable(True, True) #size resizeble for this app as i felt it was appropriate
 root.configure(bg="#F5EFE6")
+root.iconbitmap('student.ico')
+
 
 #important variables
 students = []
@@ -113,29 +115,32 @@ def view_all():
 
 #while this lets you view a single student
 def view_individual():
-    if len(students) == 0:
-        messagebox.showinfo("Student Manager", "No student records available.")
-        return
+    search_window = Toplevel(root)
+    search_window.title("Find Student")
+    search_window.geometry("300x180")
+    search_window.resizable(False, False)
+    search_window.configure(bg="#F5EFE6")
+    search_window.iconbitmap("search.ico")
 
-    search = simpledialog.askstring(
-        "Find Student",
-        "Enter the student's name or code:"
-    )
+    Label(search_window, text="Enter student name or code:",
+          bg="#F5EFE6", fg="#44232D").pack(pady=15)
 
-    if search is None or search.strip() == "":
-        return
+    search_entry = Entry(search_window, width=25)
+    search_entry.pack(pady=5)
 
-    search = search.strip().lower()
+    def search_student():
+        search = search_entry.get().strip().lower()
 
-    for student in students:
-        if student["name"].lower() == search or student["code"] == search:
-            clear_output()
-            output.insert(END, "STUDENT RECORD\n")
-            output.insert(END, "=" * 45 + "\n\n")
-            display_student(student)
-            return
+        for student in students:
+            if search == student["name"].lower() or search == student["code"]:
+                search_window.destroy()
+                clear_output()
+                display_student(student)
+                return
 
-    messagebox.showinfo("Not Found", "Student could not be found.")
+        messagebox.showinfo("Not Found", "Student not found.")
+
+    Button(search_window, text="Search", command=search_student).pack(pady=15)
 
 
 #lets you look for the student with the highest grade
@@ -181,6 +186,7 @@ def sort_students():
     sort_window.geometry("250x250")
     sort_window.resizable(False, False)
     sort_window.configure(bg="#F5EFE6")
+    sort_window.iconbitmap("sort.ico")
 
     Label(sort_window,text="Choose Sort Order",font=("Poppins", 13, "bold"),bg="#F5EFE6",fg="#44232D"
     ).pack(pady=20)
