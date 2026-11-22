@@ -18,7 +18,7 @@ students = []
 #load student records from file
 def load_students():
     try:
-        with open("studentMarks.txt", "r") as file:
+        with open("Assessment 1 - Skills Portfolio/A1 - Resources/studentMarks.txt", "r") as file:
             number_of_students = int(file.readline())
 
             for line in file:
