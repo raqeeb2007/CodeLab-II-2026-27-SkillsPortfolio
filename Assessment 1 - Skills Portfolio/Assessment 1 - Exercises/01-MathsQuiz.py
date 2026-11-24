@@ -156,6 +156,11 @@ def displayProblem():
     )
     submit_button.pack(pady=12)
 
+    #home button to return to the main menu
+    home_button = Button(main_frame,text="HOME",command=displayMenu,font=("Poppins", 11, "bold"),width=22,bg="#52718A",fg="#ffffff",activebackground="#18334D",activeforeground="#ffffff",relief="flat",bd=0,pady=8
+    )
+    home_button.pack(pady=5)
+
 #checking the user's answer
 def isCorrect(answer):
     global score, question_number, attempts
@@ -265,6 +270,7 @@ def displayResults():
     quit_button = Button(results_frame,text="QUIT.",command=root.destroy,font=("Poppins", 12, "bold"),width=22,bg="#B83232",fg="#FFFFFF",activebackground="#922626",activeforeground="#FFFFFF", relief="flat",bd=0,pady=10
     )
     quit_button.pack(pady=5)
+
 #show initial menu
 displayMenu()
 
