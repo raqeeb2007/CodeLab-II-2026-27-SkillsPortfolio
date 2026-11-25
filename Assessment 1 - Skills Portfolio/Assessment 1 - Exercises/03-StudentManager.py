@@ -123,9 +123,12 @@ def view_individual():
     search_window.iconbitmap("search.ico")
 
     Label(search_window, text="Enter student name or code:",
+          font=("Poppins", 10),
           bg="#F5EFE6", fg="#44232D").pack(pady=15)
 
-    search_entry = Entry(search_window, width=25)
+    search_entry = Entry(search_window, width=25,
+                         font=("Poppins", 10),
+                         relief="solid", bd=1)
     search_entry.pack(pady=5)
 
     def search_student():
@@ -140,7 +143,8 @@ def view_individual():
 
         messagebox.showinfo("Not Found", "Student not found.")
 
-    Button(search_window, text="Search", command=search_student).pack(pady=15)
+    Button(search_window, text="Search", command=search_student,font=("Poppins", 10, "bold"), width=18,bg="#702D3C",fg="#FFFFFF",activebackground="#8F4657",activeforeground="#FFFFFF",relief="flat",bd=0,pady=7
+    ).pack(pady=15)
 
 
 #lets you look for the student with the highest grade
